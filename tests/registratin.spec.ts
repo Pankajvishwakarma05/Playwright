@@ -32,5 +32,3 @@ test.only('Registration', async ({page}) => {
     const allProductTitles = await page.locator(".card-body b").allTextContents();
     console.log(allProductTitles);
 })
-
-
