@@ -1,15 +1,16 @@
 import { expect, test } from '@playwright/test';
 
-test.only('Page Playwright Test', async ({ page }) => {
+test('Page Playwright Test', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
 
     const pageTitle: string = await page.title();
-    console.log(pageTitle);
+    // console.log(pageTitle);
     await expect(page).toHaveTitle(pageTitle);
 
     await page.locator('#username').fill('rahulshettyacademy');
     await page.locator("[type='password']").fill('Learning@830$3mK2');
     await page.locator('#signInBtn').click();
+    await page.pause()
 
     // const errorText = await page.locator("[style*='block']").textContent();
     // console.log(errorText);
@@ -22,7 +23,10 @@ test.only('Page Playwright Test', async ({ page }) => {
     //     console.log('Login Successful');
     // }
 
-    await page.locator(".card-body a").nth(0).textContent();
-    await page.locator(".card-body a").first().textContent();
+    // await page.locator(".card-body a").nth(0).textContent();
+    // await page.locator(".card-body a").first().textContent();
+
+    const allTitles = await page.locator(".card-body a").allTextContents();
+    console.log(allTitles);
 
 });
