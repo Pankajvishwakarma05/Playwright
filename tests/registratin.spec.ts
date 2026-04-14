@@ -31,7 +31,7 @@ test('Registration', async ({ page }) => {
 
     await expect(page).toHaveURL('https://rahulshettyacademy.com/client/#/dashboard/dash');
     await page.waitForLoadState('networkidle');
-
+    await page.locator('.card-body b').first().waitFor()
     const allProductTitles = await page.locator('.card-body b').allTextContents();
     console.log(allProductTitles);
 });
