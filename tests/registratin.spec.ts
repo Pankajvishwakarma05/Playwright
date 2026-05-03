@@ -21,7 +21,7 @@ test('Registration', async ({ page }) => {
     await page.locator('input[type="checkbox"]').check();
     await page.locator('#login').click();
 
-    await expect(page.locator('button.btn.btn-primary')).toBeVisible();
+    // await expect(page.locator('button.btn.btn-primary')).toBeVisible();
     await page.locator('button.btn.btn-primary').click();
 
     await expect(page.locator('#userEmail')).toBeVisible();

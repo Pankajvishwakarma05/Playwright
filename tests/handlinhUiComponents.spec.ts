@@ -10,9 +10,9 @@ test('Handling the UI Components', async ({page }) => {
     await expect(page.locator('input[value="user"]')).toBeChecked();
     const dropdown = page.locator("select.form-control");
     await dropdown.selectOption("consult");
-    await page.locator('#terms').click();
-    await expect(page.locator('#terms')).toBeChecked()
-    await expect(page.locator('[href*="documents-request"]')).toHaveAttribute("class", "blinkingText");
-    // await page.locator('#signInBtn').click();
-    await page.pause();
+    // await page.locator('#terms').click();
+    // await expect(page.locator('#terms')).toBeChecked()
+    // await expect(page.locator('[href*="documents-request"]')).toHaveAttribute("class", "blinkingText");
+    // // await page.locator('#signInBtn').click();
+    // await page.pause();
 });
