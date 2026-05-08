@@ -30,3 +30,5 @@ test('Page Playwright Test', async ({ page }) => {
     console.log(allTitles);
 
 });
+
+
